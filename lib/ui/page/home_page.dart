@@ -39,11 +39,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CircleAvatar(
-              backgroundColor: Colors.white,
-              foregroundImage: NetworkImage(
-                  'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302'),
-              radius: 90,
+            InkWell(
+              onTap: () => loadTextContent(),
+              child: const CircleAvatar(
+                backgroundColor: Colors.white,
+                foregroundImage: NetworkImage(
+                    'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302'),
+                radius: 90,
+              ),
             ),
             VerticalText(
               content: textContent,
