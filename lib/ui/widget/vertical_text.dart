@@ -103,26 +103,30 @@ class _VerticalTextState extends State<VerticalText> {
       allTextLine.add(const Text(''));
     }
 
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.only(
-            top: 40,
-            bottom: 30,
+    return AnimatedOpacity(
+      opacity: widget.content.isEmpty ? 0.0 : 1.0,
+      duration: const Duration(milliseconds: 2000),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(
+              top: 40,
+              bottom: 30,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: allTextLine,
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: allTextLine,
+          Text(
+            '-${widget.author}-',
+            style: TextStyle(
+              fontSize: widget.singleLineWidth,
+            ),
           ),
-        ),
-        Text(
-          '-${widget.author}-',
-          style: TextStyle(
-            fontSize: widget.singleLineWidth,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

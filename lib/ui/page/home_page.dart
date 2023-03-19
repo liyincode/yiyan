@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CircleAvatar(
-              backgroundColor: Colors.lightBlue,
+              backgroundColor: Colors.white,
               foregroundImage: NetworkImage(
                   'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302'),
               radius: 90,
